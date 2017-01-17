@@ -1,21 +1,24 @@
-/* global React ReactDOM */
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import {BrowserRouter, Match } from 'react-router'
+import '../public/normalize.css'
+import '../public/style.css'
 
-import MyTitle from './MyTitle'
+import Landing from './Landing'
+import Search from './Search'
 
-var div = React.DOM.div
-
-var myFirstComponent = React.createClass({
-  render: function () {
+class App extends Component {
+  render () {
     return (
-      div(null, [
-        React.createElement(MyTitle, {title: 'Props are the best', color: 'peru'}),
-        React.createElement(MyTitle, {title: 'Semicolons are okay', color: 'mediumaquamarine'}),
-        React.createElement(MyTitle, {title: 'jk, lol, they arent', color: 'rebeccapurple'}),
-        React.createElement(MyTitle, {title: 'State is needed in here', color: 'dodgerblue'})
-      ])
+      <BrowserRouter>
+        <div className='app'>
+          <Match exactly pattern='/' component={Landing} />
+          <Match pattern='/search' component={Search} />
+        </div>
+      </BrowserRouter>
+
     )
   }
-})
-ReactDOM.render(React.createElement(myFirstComponent), document.getElementById('app'))
+}
+
+render(<App />, document.getElementById('app'))
