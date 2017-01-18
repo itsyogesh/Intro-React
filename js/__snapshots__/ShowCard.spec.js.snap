@@ -1,0 +1,20 @@
+exports[`test show-card snapshot test 1`] = `
+<div
+  className="show-card">
+  <img
+    src="/public/img/posters/hoc.jpg" />
+  <div>
+    <h3>
+      House of Cards
+    </h3>
+    <h4>
+      (
+      2013–
+      )
+    </h4>
+    <p>
+      A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.
+    </p>
+  </div>
+</div>
+`;
